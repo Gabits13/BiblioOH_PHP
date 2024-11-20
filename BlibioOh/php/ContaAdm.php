@@ -82,9 +82,8 @@ class ContaAdm
     {
         try {
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("select * from conta_administrador where Id_Funcionario = ? and Senha = ?");
+            $sql = $this->conn->prepare("select * from conta_administrador where Id_Funcionario like ?");
             @$sql->bindParam(1, $this->getIdFuncionario(), PDO::PARAM_STR);
-            @$sql->bindParam(2, $this->getSenha(), PDO::PARAM_STR);
             $sql->execute();
             return $sql->fetchAll();
             $this->conn = null;
@@ -99,9 +98,8 @@ class ContaAdm
     {
         try {
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("delete from conta_administrador where Id_Funcionario = ? and Senha = ?");
+            $sql = $this->conn->prepare("delete from conta_administrador where Id_Funcionario = ?");
             @$sql->bindParam(1, $this->getIdFuncionario(), PDO::PARAM_STR);
-            @$sql->bindParam(2, $this->getSenha(), PDO::PARAM_STR);
             if ($sql->execute() == 1) {
                 return "Registro excluido com sucesso!";
             }

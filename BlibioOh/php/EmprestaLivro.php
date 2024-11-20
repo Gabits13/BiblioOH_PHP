@@ -87,7 +87,7 @@ class EmprestaLivro
         try {
             $this->conn = new Conectar();
             $sql = $this->conn->prepare("update empresta_livro set Data_Emissao = ?, Data_Devolucao = ? where Id_Usuario = ? and Cod_livro = ?");
-            @$sql->bindParam(2, $this->getDataEmissao(), PDO::PARAM_STR);
+            @$sql->bindParam(1, $this->getDataEmissao(), PDO::PARAM_STR);
             @$sql->bindParam(2, $this->getDataDevolucao(), PDO::PARAM_STR);
             @$sql->bindParam(3, $this->getIdUsuario(), PDO::PARAM_STR);
             @$sql->bindParam(4, $this->getCodLivro(), PDO::PARAM_STR);
@@ -107,9 +107,8 @@ class EmprestaLivro
     {
         try {
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("select * from empresta_livro where Id_Usuario = ? and Cod_livro = ?");
-            @$sql->bindParam(1, $this->getIdUsuario(), PDO::PARAM_STR);
-            @$sql->bindParam(2, $this->getCodLivro(), PDO::PARAM_STR);
+            $sql = $this->conn->prepare("select * from empresta_livro where Data_Devolucao like ?");
+            @$sql->bindParam(1, $this->getDataDevolucao(), PDO::PARAM_STR);
             $sql->execute();
             return $sql->fetchAll();
             $this->conn = null;
@@ -146,7 +145,7 @@ class EmprestaLivro
         try {
             //code...
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("select * from empresta_livro order by Data_Devolucao");
+            $sql = $this->conn->prepare("select * from empresta_livro order by Id_Usuario");
             $sql->execute();
             return $sql->fetchAll();
             $this->conn = null;

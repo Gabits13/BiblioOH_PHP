@@ -47,7 +47,7 @@ class AdministraLivro
     {
         try {
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("select * from administra_livro where Cod_Livro = ?");
+            $sql = $this->conn->prepare("select * from administra_livro where Cod_Livro like ?");
             @$sql->bindParam(1, $this->getCodLivro(), PDO::PARAM_STR);
             $sql->execute();
             return $sql->fetchAll();

@@ -186,7 +186,7 @@ class Usuario{
     {
         try {
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("select * from usuario order by Nome");
+            $sql = $this->conn->prepare("select * from usuario order by Id_Usuario");
             $sql->execute();
             return $sql->fetchAll();
             $this->conn = null;

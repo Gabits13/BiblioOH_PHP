@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php
-    include_once '../BiblioohPw/php/Cargo.php';
+    include_once '../BlibioOh/php/Cargo.php';
     $c = new Cargo();
     $cargo_bd = $c->listar();
     ?>
@@ -17,7 +17,7 @@
     <?php
         extract($_POST, EXTR_OVERWRITE);
         if (isset($btnenviar)) {
-            include_once '../BiblioohPw/php/Cargo.php';
+            include_once '../BlibioOh/php/Cargo.php';
             $c = new Cargo();
             $c->setDescricao($descricao);
             $c->setNomeCargo($nome);
@@ -33,7 +33,7 @@
     <?php
         extract($_POST, EXTR_OVERWRITE);
         if (isset($btnexcluir)) {
-            include_once '../BiblioohPw/php/Cargo.php';
+            include_once '../BlibioOh/php/Cargo.php';
             $c = new Cargo();
             $c->setCodCargo($cod_cargo);
             $c->excluir();
@@ -45,36 +45,49 @@
     ?>
     
     <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#CadastroCargo">Add</button>
-        <table id="example">
-            <thead>
-                <tr>
-                    <th>Codigo do Cargo</th>
-                    <th>Descrição</th>
-                    <th>Nome do Cargo</th>
-                    <th>Salario</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
+        <form method="post">
+            <input type="text" name="nome_cargo" placeholder="Nome do Cargo">
+            <input type="submit" name="btnpesquisar" value="Pesquisar">
             <?php
-                foreach ($cargo_bd as $cargo_mostrar)
-                {
-                    ?>
-                    <tbody>
-                        <form method="post">
-                            <tr>
-                                <input type="hidden" name="cod_cargo" value="<?php echo $cargo_mostrar[0]; ?>">
-                                <td <?php echo "name = '" . $cargo_mostrar[0] . "'"?>><?php echo $cargo_mostrar[0]?></td>
-                                <td><?php echo $cargo_mostrar[1]?></td>
-                                <td><?php echo $cargo_mostrar[2]?></td>
-                                <td><?php echo $cargo_mostrar[3]?></td>
-                                <td><input type="submit" value="Del" name="btnexcluir" id="<?php echo $cargo_mostrar[0]?>" class="excluir"> <button type="button" class="alterar" data-bs-toggle="modal" data-bs-target="#AlterarCargo">Alt</button></td>
-                            </tr>
-                        </form>
-                    </tbody>
-                    <?php
-                }
+                extract($_POST, EXTR_OVERWRITE);
+                if (isset($btnpesquisar)) {
+                    include_once '../BlibioOh/php/Cargo.php';
+                    $c = new Cargo();
+                    $c->setNomeCargo($nome_cargo.'%');
+                    $cargo_bd = $c->consultar();
+                } 
             ?>
-        </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Codigo do Cargo</th>
+                        <th>Descrição</th>
+                        <th>Nome do Cargo</th>
+                        <th>Salario</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <?php
+                    foreach ($cargo_bd as $cargo_mostrar)
+                    {
+                        ?>
+                        <tbody>
+                            <form method="post">
+                                <tr>
+                                    <input type="hidden" name="cod_cargo" value="<?php echo $cargo_mostrar[0]; ?>">
+                                    <td <?php echo "name = '" . $cargo_mostrar[0] . "'"?>><?php echo $cargo_mostrar[0]?></td>
+                                    <td><?php echo $cargo_mostrar[1]?></td>
+                                    <td><?php echo $cargo_mostrar[2]?></td>
+                                    <td><?php echo $cargo_mostrar[3]?></td>
+                                    <td><input type="submit" value="Del" name="btnexcluir" id="<?php echo $cargo_mostrar[0]?>" class="excluir"> <button type="button" class="alterar" data-bs-toggle="modal" data-bs-target="#AlterarCargo">Alt</button></td>
+                                </tr>
+                            </form>
+                        </tbody>
+                        <?php
+                    }
+                ?>
+            </table>
+        </form>
 
     <!-- Modal alterar -->
     <div class="modal fade" id="AlterarCargo" tabindex="-1" aria-labelledby="AlterarCargoLabel" aria-hidden="true">
@@ -88,7 +101,7 @@
             <form class="row g-3" id="alt-cargo-form" method="post">
                 <div class="col-12">
                     <label for="cod_cargo" class="form-label">Código do Cargo</label>
-                    <input type="text" name="cod_cargo" class="form-control text-secondary" id="cod_cargo" placeholder="Descrição do cargo" readonly>
+                    <input type="text" name="cod_cargo" class="form-control text-secondary" id="cod_cargo" readonly>
                 </div>
                 <div class="col-12">
                     <label for="descricao" class="form-label">Descrição</label>
@@ -111,7 +124,7 @@
             <?php
                 extract($_POST, EXTR_OVERWRITE);
                 if (isset($btnalterar)) {
-                    include_once '../BiblioohPw/php/Cargo.php';
+                    include_once '../BlibioOh/php/Cargo.php';
                     $c = new Cargo();
                     $c->setDescricao($descricao);
                     $c->setNomeCargo($nome);

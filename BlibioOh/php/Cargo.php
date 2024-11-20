@@ -104,7 +104,7 @@ class Cargo
     {
         try {
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("select * from cargo where Nome_Cargo like ?");
+            $sql = $this->conn->prepare("select * from cargo where Nome_Cargo like ? order by Cod_Cargo");
             @$sql->bindParam(1, $this->getNomeCargo(), PDO::PARAM_STR);
             $sql->execute();
             return $sql->fetchAll();
