@@ -11,83 +11,99 @@
       <link rel="stylesheet" href="css/faleconosco.css">
 </head>
 <header>
-    <div class="px-3 py-2 text-white" style="background-color: #309190;">
-      <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <a href="menu_User.html" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-           <img width="80" height="80" class="d-inline-block align-text-center"src="img/logo.png" alt="Logo">
-          </a>
+  <div class="px-3 py-2 text-white" style="background-color: #309190;">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="menu_User.html" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+         <img width="80" height="80" class="d-inline-block align-text-center"src="img/logo.png" alt="Logo">
+        </a>
 
-          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-            <li>
-              <a href="#" class="nav-link text-dark">
-                <img class="bi d-block mx-auto mb-1" width="30" height="30" src="img/homeicon.png" alt="">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link text-white">
-               <img class="bi d-block mx-auto mb-1" width="30" height="30" src="img/livrosicon.png" alt="">
-                Livros
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link text-white">
-                <img class="bi d-block mx-auto mb-1" width="30" height="30" src="img/emprestimosicon.png" alt="">
-                Meus Empréstimos
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link text-white">
-                <img class="bi d-block mx-auto mb-1" width="30" height="30" src="img/sobrenosicon.png" alt="">
-                Sobre Nós
-              </a>
-            </li>
-          </ul>
-          <div class="dropdown text-end">
-            <a href="#" class=" mx-auto  link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="img/foto.jpg" alt="foto de  perfil" width="45" height="45" class="rounded-circle">
+        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+          <li>
+            <a href="menu_User.html" class="nav-link text-white">
+              <img class="bi d-block mx-auto mb-1" width="30" height="30" src="img/homeicon.png" alt="">
+              Home
             </a>
-            <ul class="dropdown-menu text-small">
-              <li><a class="dropdown-item" href="#">Meu Perfil</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="LoginUser.php">Sair da Conta</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-        </div>
-      </div>
-    </div>
-    <div class="px-3 py-2 border-bottom mb-3">
-      <div class="container d-flex flex-wrap justify-content-center">
-
-        <button type="button" class="btn btn-outline-primary me-auto">Fale Conosco</button>
-
-        <div class="input-group w-auto mb-0 mb-lg-0 me-lg-auto">
-            <input type="search" class="form-control" placeholder="Pesquisar por Livros..." aria-label="Search">
-            <button class="btn btn-outline-secondary" type="button">
-              <i class="bi bi-search"></i>
-            </button>
-          </div>          
-
-         <div class="d-flex align-items-center">
-        <button id="themeSwitcher2" class="btn-per btn btn-outline-dark mx-1" onclick="toggleTheme2()">
-          <i id="themeIcon2" class="bi bi-sun"></i>
-        </button>
-        <div class="dropdown">
-          <button class="btn-per btn btn-outline-dark dropdown-toggle " type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-translate"></i>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
-            <li><a class="dropdown-item" onclick="changeLanguage('pt')">Português</a></li>
-            <li><a class="dropdown-item" onclick="changeLanguage('es')">Español</a></li>
-            <li><a class="dropdown-item" onclick="changeLanguage('en')">English</a></li>
+          </li>
+          <li>
+            <a href="menu_User.html#livros" class="nav-link text-white">
+             <img class="bi d-block mx-auto mb-1" width="30" height="30" src="img/livrosicon.png" alt="">
+              Livros
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+              <img class="bi d-block mx-auto mb-1" width="30" height="30" src="img/emprestimosicon.png" alt="">
+              Meus Empréstimos
+            </a>
+          </li>
+          <li>
+            <a href="sobrenos.html" class="nav-link text-white">
+              <img class="bi d-block mx-auto mb-1" width="30" height="30" src="img/sobrenosicon.png" alt="">
+              Sobre Nós
+            </a>
+          </li>
+        </ul>
+        <div class="dropdown text-end">
+          <a href="#" class=" mx-auto  link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="img/foto.jpg" alt="foto de  perfil" width="45" height="45" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu text-small">
+            <li><a class="dropdown-item" href="meu_perfil.php">Meu Perfil</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="LoginUser.php">Sair da Conta</a></li>
           </ul>
         </div>
+      </div>
     </div>
       </div>
     </div>
+  </div>
+  <div class="px-3 py-2 border-bottom mb-3">
+    <div class="container d-flex flex-wrap justify-content-center">
+
+      <a class="me-auto" href="faleconosco.html">
+        <button type="button" class="btn btn-outline-primary me-auto custom-btn">Fale Conosco</button>
+     </a>
+     <style>
+      .custom-btn {
+    border-color: rgb(255, 118, 0); 
+    color: rgb(255, 118, 0);       
+    background-color: transparent; 
+    transition: all 0.3s ease-in-out; 
+}
+
+.custom-btn:hover {
+    background-color: rgb(255, 118, 0); 
+    color: white;                      
+    border-color: rgb(255, 118, 0);    
+}
+     </style>
+
+<div class="input-group w-auto mb-0 mb-lg-0 me-lg-auto">
+  <input type="hidden" class="form-control" placeholder="Pesquisar por Livros..." aria-label="Search">
+  <!--<button class="btn btn-outline-secondary custom-btn" type="">
+    <i class="bi bi-search"></i>
+  </button>-->
+</div>         
+
+       <div class="d-flex align-items-center">
+      <button id="themeSwitcher2" class="btn-per btn btn-outline-dark custom-btn mx-1" onclick="toggleTheme2()">
+        <i id="themeIcon2" class="bi bi-sun"></i>
+      </button>
+      <div class="dropdown">
+        <button class="btn-per btn btn-outline-dark custom-btn dropdown-toggle " type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-translate"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+          <li><a class="dropdown-item" onclick="changeLanguage('pt')">Português</a></li>
+          <li><a class="dropdown-item" onclick="changeLanguage('es')">Español</a></li>
+          <li><a class="dropdown-item" onclick="changeLanguage('en')">English</a></li>
+        </ul>
+      </div>
+  </div>
+    </div>
+  </div>
   </header>
 <body>
  
@@ -143,7 +159,7 @@
         <div class="form-container sign-in">
             <form action="https://api.staticforms.xyz/submit" method="post">
 
-              <input type="hidden" name="accessKey" value="91d026b8-b913-4e4c-9b15-f56907e428a7">
+              <input type="hidden" name="accessKey" value="b344af17-6a18-4d93-ba00-fcc2a87abea4">
                 <h1 class="mb-3">Fale Conosco!</h1>
                 <span>Preencha as informações de contato!</span>
                 <div class="input-box">
@@ -163,7 +179,7 @@
                
 
               
-                <input type="hidden" name="redirectTo" valeu="https://ironpressusinagem.com.br/index.html">
+                <input type="hidden" name="redirectTo" value="menu_User.html">
                 <button type="submit" name="btnenviar" class="btn">Enviar</button>
             </form>
         </div>
@@ -202,68 +218,30 @@
    <script src= "js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-  <!--FOOTER-->
-<div class="b-example-divider" style="background: linear-gradient(#4286f4, #373B44);">
-    <div class="container" style="color: white;">
-      <footer class="py-5">
- 
+ <!-- Footer -->
+ <div class="b-example-divider mt-auto" style="background: linear-gradient(135deg, #2c8583, #4aa7a8);">
+  <div class="container" style="color: white;">
+    <footer class="py-5">
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <p id="direitos-footer">&copy; 2024 BiblioOh&reg;. Todos os direitos reservados</p>
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3"><a rel="external" class="link-body-emphasis" href="#"><img src="img/instaicon.png" alt="Instagram" width="24" height="24"></a></li>
+          <li class="ms-3"><a rel="external" class="link-body-emphasis" href="#"><img src="img/facebookicon.png" alt="Facebook" width="24" height="24"></a></li>
+          <li class="ms-3"><a rel="external" class="link-body-emphasis" href="#"><img src="img/whatsappicon.png" alt="WhatsApp" width="24" height="24"></a></li>
+        </ul>
+      </div>
 
-               <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                    <p id= "direitos-footer">&copy; 2024 IRONPRESS USINAGEM&reg;. Todos os direitos reservados</p>
-                    <ul class="list-unstyled d-flex">
-                        <li class="ms-3"><a  target="_blank" rel="external" class="link-body-emphasis" href="https://www.instagram.com/ironpressusinagem/"><img src="img/instaicon.png" alt="Instagram" width="24" height="24"></a></li>
-                        <li class="ms-3"><a  target="_blank" rel="external" class="link-body-emphasis" href="https://www.facebook.com/profile.php?id=61555614025941&mibextid=ZbWKwL"><img src="img/facebookicon.png" alt="Facebook" width="24" height="24"></a></li>
-                        <li class="ms-3"><a  target="_blank" rel="external" class="link-body-emphasis" href="https://wa.me/5511947531301"><img src="img/whatsappicon.png" alt="WhatsApp" width="24" height="24"></a></li>
-                        <li class="ms-3"><a target="_blank" rel="external" class="link-body-emphasis" href="#" data-bs-toggle="modal" data-bs-target="#githubModal"><i class="fab fa-github" style="font-size: 27px;"></i></a></li>
-                      </ul>
-                </div>
-             <!-- Modal do GitHub -->
-  <div class="modal fade" id="githubModal" tabindex="-1" aria-labelledby="githubModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header" style="background-color: #24292e; color: #fff; border-bottom: none;">
-                <i class="fab fa-github" style="font-size: 2rem; margin-right: 8px;"></i>
-                <h5 class="modal-title" id="githubModalLabel">Sobre os Desenvolvedores</h5>
-                <button type="button" class="btn-close custom-bg" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center">
-                <ul class="list-unstyled d-flex justify-content-center">
-                    <li style="margin-right: 16px;">
-                        <a href="https://github.com/Gabits13" target="_blank" class="link-body">
-                            <img src="img/foto.jpg" alt="Perfil do Gabriel Santos" class="mt-2" width="80" height="80" style="border-radius: 50%;">
-                        </a>
-                        <p class="text-center mt-2" style="text-decoration: none; color: black;">Gabriel Santos</p>
-                    </li>
-                    <li style="margin-right: 16px;">
-                        <a href="https://github.com/Gabits13" target="_blank" class="link-body">
-                            <img src="img/fotoBielOliveira.jpg" alt="Perfil do Gabriel Santos" class="mt-2" width="80" height="80" style="border-radius: 50%;">
-                        </a>
-                        <p class="text-center mt-2" style="text-decoration: none; color: black;">Gabriel Oliveira</p>
-                    </li>
-                    <li style="margin-right: 16px;">
-                        <a href="https://github.com/Gabits13" target="_blank" class="link-body">
-                            <img src="img/fotoGui.jpg" alt="Perfil do Gabriel Santos" class="mt-2" width="80" height="80" style="border-radius: 50%;">
-                        </a>
-                        <p class="text-center mt-2" style="text-decoration: none; color: black;">Guilherme Santos</p>
-                    </li>
-                </ul>
-            </div>
-            <div class="modal-footer" style="border-top: none;">
-                <button type="button" class="btn btn-secondary"id="botao-fechar-footer-2" data-bs-dismiss="modal">Fechar</button>
-            </div>
+  
+
+      <div class="row">
+        <div class="col text-center">
+          <a href="#" class="btn btn-dark btn-m rounded-pill"><i class="bi-arrow-up-circle"></i></a>
         </div>
-    </div>
+      </div>
+    </footer>
   </div>
-
-
-       <div class="row">
-            <div class="col text-center">
-                <a href="#" class="btn btn-light btn-m rounded-pill"><i class=" bi-arrow-up-circle"></i></a>
-            </div>
-        </div>
-  </footer>
-  </div>
-  </div>
+</div>
+</div>  
 </body>
 
 </html>

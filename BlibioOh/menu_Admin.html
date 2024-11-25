@@ -33,7 +33,8 @@
     <!-- Menu Lateral -->
    <div class="sidebar mb-0">
     <div class="text-center mb-3">
-        <img src="img/foto.jpg" alt="Perfil" width="100" height="100" class="mb-2 rounded-circle">
+       <a href="meu_perfil.html
+       "></a> <img src="img/foto.jpg" alt="Perfil" width="100" height="100" class="mb-2 rounded-circle">
         <h5 style="font-weight: bold; color: rgb(255, 118, 0);">Nome</h5>
         <span style="color: #dadada; font-size: 11pt;">gabriel.santos@blibiooh.com</span>
     </div>
@@ -42,10 +43,10 @@
             <a href="#" class="nav-link"><i class="bi bi-house-door-fill"></i> Início</a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link"><i class="bi bi-people"></i> Usuários</a>
+            <a href="php_crud/TabelaUsuario.php" class="nav-link"><i class="bi bi-people"></i> Usuários</a>
         </li>
         <li class="nav-item">
-            <a href="Tabela_Livro.php" class="nav-link"><i class="bi bi-book"></i> Livros</a>
+            <a href="php_crud/TabelaLivro.php" class="nav-link"><i class="bi bi-book"></i> Livros</a>
         </li>
 
         <!-- Dropdown para Administração Interna -->
@@ -57,32 +58,29 @@
             <div class="collapse" id="adminDropdown">
                 <ul class="nav flex-column ms-3">
                     <li class="nav-item">
-                        <a href="#" class="nav-link"><i class="bi bi-person-badge"></i> Administradores</a>
+                        <a href="php_crud/TabelaAdministradores.php" class="nav-link"><i class="bi bi-person-badge"></i> Administradores</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link"><i class="bi bi-book-half"></i> Administrar Livro</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link"><i class="bi bi-briefcase"></i> Funcionários</a>
+                        <a href="php_crud/TabelaFuncionario.php" class="nav-link"><i class="bi bi-briefcase"></i> Funcionários</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link"><i class="bi bi-layout-text-sidebar"></i> Setores</a>
+                        <a href="php_crud/TabelaSetor.php" class="nav-link"><i class="bi bi-layout-text-sidebar"></i> Setores</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link"><i class="bi bi-briefcase"></i> Cargos</a>
+                        <a href="php_crud/TabelaCargo.php" class="nav-link"><i class="bi bi-briefcase"></i> Cargos</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link"><i class="bi bi-calendar3"></i> Período</a>
+                        <a href="php_crud/TabelaPeriodo.php" class="nav-link"><i class="bi bi-calendar3"></i> Período</a>
                     </li>
                 </ul>
             </div>
         </li>
 
         <li class="nav-item">
-            <a href="#" class="nav-link"><i class="bi bi-calendar-check"></i> Empréstimos</a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link"><i class="bi bi-info-circle"></i> Sobre Nós</a>
+            <a href="php_crud/TabelaEmprestimo.php" class="nav-link"><i class="bi bi-calendar-check"></i> Empréstimos</a>
         </li>
         <li class="nav-item mt-auto">
             <a href="LoginUser.php" class="nav-link"><i class="bi bi-box-arrow-right"></i> Sair</a>
@@ -92,79 +90,117 @@
 
     <!-- Conteúdo Principal -->
     <div class="content mt-4">
+        <div class="container-fluid w-100 p-0"> 
+            <div style="margin-top: -20px;" id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel"> 
+              <div class="carousel-inner mb-3">
+                <div class="carousel-item active" id="carrossel-item" data-bs-interval="5000">
+                  <img src="img/blibioteca.jpg" class="d-block w-100" style="pointer-events: none; object-fit: cover; max-height: 400px;" alt="Foto de um CNC por dentro">
+                   <div class="carousel-caption d-block d-md-block">
+                    <h3>BlibioOH&reg;</h3>
+                    <p id="carousel-caption1" style="font-family: Arial; font-size: 18px; font-weight: bold;">Explore um universo de histórias e descobertas na BiblioOH</p>
+                  </div>
+                </div>
+                <div class="carousel-item" id="carrossel-item" data-bs-interval="7000">
+                  <img src="img/biblioteca2.jpg" class="d-block w-100" style="pointer-events: none; object-fit: cover; max-height: 400px; filter: blur(0.5px);" alt="Foto de um CNC por dentro">
+                   <div class="carousel-caption d-block d-md-block">
+                    <h3 id= "carousel-title2">BlibioOH&reg;</h3>
+                    <p id="carousel-caption2" style="font-family: Arial; font-size: 18px; font-weight: bold;">Sua próxima aventura começa aqui!</p>
+                  </div>
+                </div>
+                <div class="carousel-item" id="carrossel-item" data-bs-interval="7000">
+                  <img src="img/biblioteca3.jpg" class="d-block w-100" style="pointer-events: none; object-fit: cover; max-height: 400px; filter: blur(0.5px);" alt="Foto de um CNC por dentro">
+                   <div class="carousel-caption d-block d-md-block">
+                    <h3 id= "carousel-title3">BlibioOH&reg;</h3>
+                    <p id="carousel-caption3" style="font-family: Arial; font-size: 18px; font-weight: bold;">Conecte-se ao conhecimento e inspire-se em cada página.</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
         <h1 class="mt-5">Bem-vindo à Área Administrativa</h1>
-        <p>Este é o painel de administração onde você pode gerenciar livros, usuários e configurações do sistema.</p>
+        <p class="mb-5">Este é o painel de administração onde você pode gerenciar livros, usuários e configurações do sistema.</p>
     </div>
-    <div class="content-fluid mt-3 mb-3  fade-in-section">
-        <div class="content mt-4 mb-5">
-           <h2 class="mb-4" id="nossa-producao">Nossa Produção</h2>
-           <p id="texto-producao" style="font-size: 20px; text-align: justify;  hyphens: auto; -webkit-hyphens: auto; word-spacing: -0.05em;">Nós da <i>IronPress</i> temos um diferencial que reside na nossa abordagem centrada no cliente e na nossa capacidade de tirar os projetos dos clientes do papel e transformar em realidade. Embora não tenhamos uma linha de produção própria, nosso foco está em atender às necessidades específicas de cada cliente. Trabalhamos arduamente para garantir que cada peça fabricada seja um reflexo fiel do projeto e visão do cliente. Desde que possamos contar com o desenho ou especificações necessárias, estamos prontos para transformar conceitos em produtos, com qualidade de usinagem inigualável. Nosso compromisso é não apenas satisfazer, mas superar as expectativas dos nossos clientes, proporcionando um serviço personalizado e sob medida para suas necessidades.</p>
-       </div>
-       </div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
 
-<!-- Footer -->
-<div class="b-example-divider mt-auto" style="background: linear-gradient(135deg, #2c8583, #4aa7a8);">
-    <div class="container" style="color: white;">
-      <footer class="py-5">
-        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-          <p id="direitos-footer">&copy; 2024 IRONPRESS USINAGEM&reg;. Todos os direitos reservados</p>
-          <ul class="list-unstyled d-flex">
-            <li class="ms-3"><a target="_blank" rel="external" class="link-body-emphasis" href="#"><img src="img/instaicon.png" alt="Instagram" width="24" height="24"></a></li>
-            <li class="ms-3"><a target="_blank" rel="external" class="link-body-emphasis" href="#"><img src="img/facebookicon.png" alt="Facebook" width="24" height="24"></a></li>
-            <li class="ms-3"><a target="_blank" rel="external" class="link-body-emphasis" href="#"><img src="img/whatsappicon.png" alt="WhatsApp" width="24" height="24"></a></li>
-            <li class="ms-3"><a target="_blank" rel="external" class="link-body-emphasis" href="#" data-bs-toggle="modal" data-bs-target="#githubModal"><i class="fab fa-github" style="font-size: 27px;"></i></a></li>
-          </ul>
+    <!-- Footer -->
+<footer class="bg-primary text-white py-4 mt-auto">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Espaçamento lateral da sidebar -->
+            <div class="col-12 col-md-8 offset-md-3">
+                <div class="text-center">
+                    <p class="mb-2">&copy; 2024 BiblioOh&reg;. Todos os direitos reservados</p>
+                    <ul class="list-unstyled d-flex justify-content-center">
+                        <li class="ms-3"><a href="#" target="_blank" rel="external" class="text-white">
+                            <i class="fab fa-instagram" style="font-size: 24px;"></i></a></li>
+                        <li class="ms-3"><a href="#" target="_blank" rel="external" class="text-white">
+                            <i class="fab fa-facebook" style="font-size: 24px;"></i></a></li>
+                        <li class="ms-3"><a href="#" target="_blank" rel="external" class="text-white">
+                            <i class="fab fa-whatsapp" style="font-size: 24px;"></i></a></li>
+                            <li class="ms-3"><a target="_blank" rel="external" class="text-white" href="#" data-bs-toggle="modal" data-bs-target="#githubModal"><i class="fab fa-github" style="font-size: 24px;"></i></a></li>
+                    </ul>
+                    <div class="row mb-1">
+                      <div class="col mt-3 text-center">
+                          <a href="#top" class="btn btn-dark rounded-circle">
+                              <i class="bi bi-arrow-up-circle" style="font-size: 20px;"></i>
+                          </a>
+                      </div>
+                  </div>
+                </div>
+            </div>
         </div>
+      </div>
+  
+</footer>
 
-        <!-- Modal do GitHub -->
-        <div class="modal fade" id="githubModal" tabindex="-1" aria-labelledby="githubModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header" style="background-color: #24292e; color: #fff; border-bottom: none;">
-                <i class="fab fa-github" style="font-size: 2rem; margin-right: 8px;"></i>
-                <h5 class="modal-title" id="githubModalLabel">Sobre os Desenvolvedores</h5>
-                <button type="button" class="btn-close custom-bg" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body text-center">
-                <ul class="list-unstyled d-flex justify-content-center">
-                  <li style="margin-right: 16px;">
-                    <a href="https://github.com/Gabits13" target="_blank" class="link-body">
-                      <img src="img/foto.jpg" alt="Perfil do Gabriel Santos" class="mt-2" width="80" height="80" style="border-radius: 50%;">
-                    </a>
-                    <p class="text-center mt-2" style="text-decoration: none; color: black;">Gabriel Santos</p>
-                  </li>
-                  <li style="margin-right: 16px;">
-                    <a href="https://github.com/Gabits13" target="_blank" class="link-body">
-                      <img src="img/fotoBielOliveira.jpg" alt="Perfil do Gabriel Santos" class="mt-2" width="80" height="80" style="border-radius: 50%;">
-                    </a>
-                    <p class="text-center mt-2" style="text-decoration: none; color: black;">Gabriel Oliveira</p>
-                  </li>
-                  <li style="margin-right: 16px;">
-                    <a href="https://github.com/Gabits13" target="_blank" class="link-body">
-                      <img src="img/fotoGui.jpg" alt="Perfil do Gabriel Santos" class="mt-2" width="80" height="80" style="border-radius: 50%;">
-                    </a>
-                    <p class="text-center mt-2" style="text-decoration: none; color: black;">Guilherme Santos</p>
-                  </li>
-                </ul>
-              </div>
-              <div class="modal-footer" style="border-top: none;">
-                <button type="button" class="btn btn-secondary" id="botao-fechar-footer-2" data-bs-dismiss="modal">Fechar</button>
-              </div>
+
+      <!-- Modal do GitHub -->
+      <div class="modal fade" id="githubModal" tabindex="-1" aria-labelledby="githubModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header" style="background-color: #24292e; color: #fff; border-bottom: none;">
+              <i class="fab fa-github" style="font-size: 2rem; margin-right: 8px;"></i>
+              <h5 class="modal-title" id="githubModalLabel">Sobre os Desenvolvedores</h5>
+              <button type="button" class="btn-close custom-bg" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+              <ul class="list-unstyled d-flex justify-content-center">
+                <li style="margin-right: 16px;">
+                  <a href="https://github.com/Gabits13" target="_blank" class="link-body">
+                    <img src="img/foto.jpg" alt="Perfil do Gabriel Santos" class="mt-2" width="80" height="80" style="border-radius: 50%;">
+                  </a>
+                  <p class="text-center mt-2" style="text-decoration: none; color: black;">Gabriel Santos</p>
+                </li>
+                <li style="margin-right: 16px;">
+                  <a href="https://github.com/Gabits13" target="_blank" class="link-body">
+                    <img src="img/fotoBielOliveira.jpg" alt="Perfil do Gabriel Santos" class="mt-2" width="80" height="80" style="border-radius: 50%;">
+                  </a>
+                  <p class="text-center mt-2" style="text-decoration: none; color: black;">Gabriel Oliveira</p>
+                </li>
+                <li style="margin-right: 16px;">
+                  <a href="https://github.com/Gabits13" target="_blank" class="link-body">
+                    <img src="img/fotoGui.jpg" alt="Perfil do Gabriel Santos" class="mt-2" width="80" height="80" style="border-radius: 50%;">
+                  </a>
+                  <p class="text-center mt-2" style="text-decoration: none; color: black;">Guilherme Santos</p>
+                </li>
+              </ul>
+            </div>
+            <div class="modal-footer" style="border-top: none;">
+              <button type="button" class="btn btn-secondary" id="botao-fechar-footer-2" data-bs-dismiss="modal">Fechar</button>
             </div>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col text-center">
-            <a href="#" class="btn btn-light btn-m rounded-pill"><i class="bi-arrow-up-circle"></i></a>
-          </div>
-        </div>
-      </footer>
-    </div>
-  </div>
-</div>  
-  
+      </div>
+  </div> 
+</body>
 </html>

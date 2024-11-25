@@ -1,10 +1,43 @@
+/* Garantir que o layout da página respeite a sidebar */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+.custom-btn {
+    border-color: rgb(255, 118, 0); 
+    color: rgb(255, 118, 0);       
+    background-color: transparent; 
+    transition: all 0.3s ease-in-out; 
+}
+
+.custom-btn:hover {
+    background-color: rgb(255, 118, 0); 
+    color: white;                      
+    border-color: rgb(255, 118, 0);    
+}
+
+footer {
+    background: linear-gradient(to right, rgb(255, 118, 0), rgb(255, 165, 77));
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+footer .container-fluid {
+    max-width: 960px; /* Ajuste o tamanho máximo para alinhar ao conteúdo principal */
+    margin: 0 auto;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
 
 .sidebar {
     width: 250px;
@@ -20,7 +53,7 @@ body {
 }
 
 @media (max-width: 900px) {
-    /*  tamanho do mapa responsivo para dispositivos móveis */
+  
     .sidebar {
         z-index: 0;
     }
@@ -81,3 +114,4 @@ body {
     padding-top: 100px; 
     padding: 20px;
 }
+

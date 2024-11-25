@@ -1,5 +1,5 @@
 <?php
-include_once 'conectar.php';
+include_once '../conectar.php';
 
 class Funcionario {
     private $idFuncionario;

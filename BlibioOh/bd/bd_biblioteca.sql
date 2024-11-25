@@ -165,11 +165,14 @@ CREATE TABLE `livro` (
 --
 
 INSERT INTO `livro` (`Cod_Livro`, `Titulo`, `Nome_Autor`, `Data_Lancamento`, `Genero`, `Qtde_Pagina`, `Exemplares`, `Editora`, `ISBN`, `Cod_Setor`) VALUES
-(1, 'Aventuras no Mar', 'João Santos', '2015-06-10', 'Aventura', 320, 5, 'Editora Mar', '9781234567890', 1),
-(2, 'O Mistério da Casa', 'Ana Souza', '2018-10-15', 'Mistério', 250, 4, 'Editora Mistério', '9780987654321', 2),
-(3, 'Segredos do Deserto', 'Carlos Oliveira', '2020-01-20', 'Suspense', 280, 6, 'Editora Suspense', '9781112223334', 3),
-(4, 'História Antiga', 'Maria Lima', '2012-11-05', 'História', 450, 2, 'Editora História', '9784445556667', 1),
-(5, 'Tecnologias Futuras', 'Paulo Costa', '2021-04-12', 'Tecnologia', 310, 3, 'Editora Tech', '9787778889990', 4);
+(1, 'O Mundo de Sofia', 'Jostein Gaarder', '1991-10-01', 'Filosofia', 400, 5, 'Editora Arqueiro', '9788539002632', 1),
+(2, 'O Príncipe de Maquiavel', 'Niccolò Machiavelli', '1532-01-01', 'Política', 200, 4, 'Editora Martin Claret', '9788578273836', 2),
+(3, 'A Arte da Guerra', 'Sun Tzu', '500 a.C.', 'Estratégia', 150, 6, 'Editora Record', '9788535906167', 3),
+(4, 'O Pequeno Príncipe', 'Antoine de Saint-Exupéry', '1943-04-06', 'Infantil', 100, 6, 'Editora Agir', '9788501060227', 4),
+(5, 'O Guarani', 'José de Alencar', '1857-01-01', 'Romance', 380, 3, 'Editora Ática', '9788502047957', 1),
+(6, 'Revolução dos Bichos', 'George Orwell', '1945-08-17', 'Fábula Política', 150, 5, 'Editora Companhia das Letras', '9788535911192', 2),
+(7, 'O Menino do Pijama Listrado', 'John Boyne', '2006-01-05', 'Ficção Histórica', 250, 4, 'Editora Companhia das Letras', '9788535911239', 3),
+(8, 'Fahrenheit 451', 'Ray Bradbury', '1953-10-19', 'Ficção Científica', 300, 5, 'Editora Globo', '9788525068525', 4);
 
 -- --------------------------------------------------------
 

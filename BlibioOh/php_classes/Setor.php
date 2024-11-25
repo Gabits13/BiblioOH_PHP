@@ -1,6 +1,6 @@
 <?php
 
-include_once 'conectar.php';
+include_once '../conectar.php';
 
 class Setor {
     private $codSetor;
@@ -135,7 +135,7 @@ class Setor {
         try 
         {
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("select * from setor order by Andar");
+            $sql = $this->conn->prepare("select * from setor order by Cod_Setor");
             $sql->execute();
             return $sql->fetchAll();
             $this->conn = null;

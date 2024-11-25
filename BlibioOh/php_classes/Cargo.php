@@ -1,6 +1,6 @@
 <?php
 
-include_once 'conectar.php';
+include_once '../conectar.php';
 
 class Cargo 
 {
@@ -47,7 +47,7 @@ class Cargo
     {
         try {
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("insert into cargo value (null,?,?,?)");
+            $sql = $this->conn->prepare("insert into cargo values (null,?,?,?)");
             @$sql->bindParam(1, $this->getDescricao(), PDO::PARAM_STR);
             @$sql->bindParam(2, $this->getNomeCargo(), PDO::PARAM_STR);
             @$sql->bindParam(3, $this->getSalario(), PDO::PARAM_STR);
@@ -144,7 +144,7 @@ class Cargo
             $this->conn = new Conectar();
             $sql = $this->conn->prepare("select * from cargo order by Cod_Cargo");
             $sql->execute();
-            return $sql->fetch();
+            return $sql->fetchAll();
             $this->conn = null;
         }
         catch (PDOException $exc) 
