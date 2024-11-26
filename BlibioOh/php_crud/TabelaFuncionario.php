@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="../css/admin.css">
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
-
+      <?php session_start();?>
 </head>
 <body>
 
@@ -25,9 +25,9 @@
             <img src="../img/logo.png" alt="Logo" width="70" height="70">
         </div>
         <div class="d-flex align-items-center" style="position: absolute; right: 20px;">
-            <button id="themeSwitcher2" class="btn-per btn btn-outline-dark mx-3" onclick="toggleTheme2()">
-                <i id="themeIcon2" style="color:rgb(255, 118, 0) ;" class="bi bi-sun"></i>
-            </button>
+           <!--<button id="themeSwitcher2" class="btn-per btn btn-outline-dark custom-btn mx-1" onclick="toggleTheme2()">
+          <i id="themeIcon2" class="bi bi-sun"></i>
+        </button>-->
         </div>
     </div>
 </div>
@@ -36,14 +36,16 @@
 
     <!-- Menu Lateral -->
    <div class="sidebar mb-0">
-    <div class="text-center mb-3">
-       <a href="meu_perfil_admin.php"></a> <img src="../img/foto.jpg" alt="Perfil" width="100" height="100" class="mb-2 rounded-circle">
-        <h5 style="font-weight: bold; color: rgb(255, 118, 0);">Nome</h5>
-        <span style="color: #dadada; font-size: 11pt;">gabriel.santos@blibiooh.com</span>
+   <div class="text-center mb-3" style="text-decoration: none; cursor:pointer;">
+       <a style="text-decoration: none;" href="meu_perfil_admin.php "> 
+          <img src="../img/perfil.jpg" alt="Perfil" width="100" height="100" class="mb-2 rounded-circle">
+          <h5 style=" font-weight: bold; color: rgb(255, 118, 0);"><?php echo $_SESSION['Nome_Func']?></h5>
+          <span style="color: #dadada; font-size: 11pt;"><?php echo $_SESSION['Email_Func']?></span>
+      </a>
     </div>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a href="../menu_Admin.html" class="nav-link"><i class="bi bi-house-door-fill"></i> Início</a>
+            <a href="../menu_Admin.php" class="nav-link"><i class="bi bi-house-door-fill"></i> Início</a>
         </li>
         <li class="nav-item">
             <a href="TabelaUsuario.php" class="nav-link"><i class="bi bi-people"></i> Usuários</a>
@@ -64,7 +66,7 @@
                         <a href="TabelaContaAdm.php" class="nav-link"><i class="bi bi-person-badge"></i> Administradores</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link"><i class="bi bi-book-half"></i> Administrar Livro</a>
+                        <a href="TabelaAdministra.php" class="nav-link"><i class="bi bi-book-half"></i> Administrar Livro</a>
                     </li>
                     <li class="nav-item">
                         <a href="TabelaFuncionario.php" class="nav-link"><i class="bi bi-briefcase"></i> Funcionários</a>
@@ -121,8 +123,9 @@
             $f->setCodCargo($codCargo);
             $f->salvar();
 
-            header('Location: ' . $_SERVER['PHP_SELF']);
-            exit;
+            echo '<script>window.location.href = "' . $_SERVER['PHP_SELF'] . '";</script>';
+            //header('Location: ' . $_SERVER['PHP_SELF']);
+            //exit;
             //Por favor não coloque essa parte do código em outro lugar se não ele quebra
         }
     ?>
@@ -135,8 +138,10 @@
             $f->setIdFuncionario($id_funcionario);
             $f->excluir();
 
-            header('Location: ' . $_SERVER['PHP_SELF']);
-            exit;
+
+            echo '<script>window.location.href = "' . $_SERVER['PHP_SELF'] . '";</script>';
+            //header('Location: ' . $_SERVER['PHP_SELF']);
+            //exit;
             //Por favor não coloque essa parte do código em outro lugar se não ele quebra
         }
     ?>
@@ -300,11 +305,11 @@ footer {
                 </div>
                 <div class="col-12">
                     <label for="dataNascimento" class="form-label">Data de nascimento</label>
-                    <input type="text" name="dataNascimento" class="form-control" id="dataNascimento" placeholder="Data de nascimento do funcionário" required>
+                    <input type="date" name="dataNascimento" class="form-control" id="dataNascimento" placeholder="Data de nascimento do funcionário" required>
                 </div>
                 <div class="col-12">
                     <label for="dataAdmissao" class="form-label">Data de admissão</label>
-                    <input type="text" name="dataAdmissao" class="form-control" id="dataAdmissao" placeholder="Data de admissão do funcionário" required>
+                    <input type="date" name="dataAdmissao" class="form-control" id="dataAdmissao" placeholder="Data de admissão do funcionário" required>
                 </div>
                 <div class="col-12">
                     <label for="endereco" class="form-label">Endereço</label>
@@ -312,11 +317,11 @@ footer {
                 </div>
                 <div class="col-12">
                     <label for="telefone" class="form-label">Telefone</label>
-                    <input type="text" name="telefone" class="form-control" id="telefone" placeholder="Telefone do funcionário" required>
+                    <input type="tel" name="telefone" class="form-control" id="telefone" placeholder="Telefone do funcionário" required>
                 </div>
                 <div class="col-12">
                     <label for="email" class="form-label">E-mail</label>
-                    <input type="text" name="email" class="form-control" id="email" placeholder="E-mail do funcionário" required>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="E-mail do funcionário" required>
                 </div>
                 <div class="col-12">
                     <label for="codPeriodo" class="form-label">Código do periodo</label>
@@ -384,11 +389,11 @@ footer {
                 </div>
                 <div class="col-12">
                     <label for="dataNascimento" class="form-label">Data de nascimento</label>
-                    <input type="text" name="dataNascimento" class="form-control" id="dataNascimento" placeholder="Data de nascimento do funcionário" required>
+                    <input type="date" name="dataNascimento" class="form-control" id="dataNascimento" placeholder="Data de nascimento do funcionário" required>
                 </div>
                 <div class="col-12">
                     <label for="dataAdmissao" class="form-label">Data de admissão</label>
-                    <input type="text" name="dataAdmissao" class="form-control" id="dataAdmissao" placeholder="Data de admissão do funcionário" required>
+                    <input type="date" name="dataAdmissao" class="form-control" id="dataAdmissao" placeholder="Data de admissão do funcionário" required>
                 </div>
                 <div class="col-12">
                     <label for="endereco" class="form-label">Endereço</label>
@@ -396,11 +401,11 @@ footer {
                 </div>
                 <div class="col-12">
                     <label for="telefone" class="form-label">Telefone</label>
-                    <input type="text" name="telefone" class="form-control" id="telefone" placeholder="Telefone do funcionário" required>
+                    <input type="tel" name="telefone" class="form-control" id="telefone" placeholder="Telefone do funcionário" required>
                 </div>
                 <div class="col-12">
                     <label for="email" class="form-label">E-mail</label>
-                    <input type="text" name="email" class="form-control" id="email" placeholder="E-mail do funcionário" required>
+                    <input type="email" name="email" class="form-control" id="email" placeholder="E-mail do funcionário" required>
                 </div>
                 <div class="col-12">
                     <label for="codPeriodo" class="form-label">Código do periodo</label>

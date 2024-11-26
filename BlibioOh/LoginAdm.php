@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/login.css">
     <title>Login - BlibioOH</title>
+    <?php session_start();?>
+
 </head>
 <body>
     <div class="container" id="container">
@@ -54,8 +56,22 @@
                 
                         foreach ($pro_bd as $pro_mostrar) {
                             $existe = true;
-                            echo "<div class='mb-0 mt-0 alert alert-success text-center' style='padding: 10px; font-size: 0.9em;'><b>Bem Vindo! Usuário: " . ($pro_mostrar['Nome']) . "</b></div>";
-                            echo "<a href='menu_Admin.html'><button type='button' name='btnentrar' class=' mt-0 mb-0 btn btn-primary w-100'>Entrar</button></a>";
+
+                        $_SESSION['Id_Funcionario'] = $pro_mostrar['Id_Funcionario'];
+                        $_SESSION['Nome_Func'] = $pro_mostrar['Nome'];
+                        $_SESSION['Rg_Func'] = $pro_mostrar['RG'];
+                        $_SESSION['Cpf_Func'] = $pro_mostrar['CPF'];
+                        $_SESSION['Data_Nascimento'] = $pro_mostrar['Data_Nasc'];
+                        $_SESSION['Data_Admissao'] = $pro_mostrar['Data_Admissao'];
+                        $_SESSION['Endereco_Func'] = $pro_mostrar['Endereco'];
+                        $_SESSION['Telefone_Func'] = $pro_mostrar['Telefone'];
+                        $_SESSION['Email_Func'] = $pro_mostrar['Email'];
+                        $_SESSION['Cod_Periodo'] = $pro_mostrar['Cod_Periodo'];
+                        $_SESSION['Cod_Cargo'] = $pro_mostrar['Cod_Cargo'];
+                        $_SESSION['Senha_Func'] = $u->getSenha();
+
+                            echo "<div class='mb-0 mt-0 alert alert-success text-center' style='padding: 10px; font-size: 0.9em;'><b>Bem Vindo! Usuário: " . ($_SESSION['Nome_Func']) . "</b></div>";
+                            echo "<a href='menu_Admin.php'><button type='button' name='btnentrar' class=' mt-0 mb-0 btn btn-primary w-100'>Entrar</button></a>";
                         }
                         if (!$existe) {
                             echo "<div class='alert alert-danger text-center'><b>Login inválido! Tente novamente.</b></div>";

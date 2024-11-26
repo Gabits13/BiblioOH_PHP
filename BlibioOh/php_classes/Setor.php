@@ -1,6 +1,6 @@
 <?php
 
-include_once '../conectar.php';
+include_once 'conectar.php';
 
 class Setor {
     private $codSetor;

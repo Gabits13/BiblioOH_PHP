@@ -12,7 +12,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
       <link rel="stylesheet" href="../css/admin.css">
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-     
+      <?php session_start();?>
 
 </head>
 <body>
@@ -27,9 +27,9 @@
             <img src="../img/logo.png" alt="Logo" width="70" height="70">
         </div>
         <div class="d-flex align-items-center" style="position: absolute; right: 20px;">
-            <button id="themeSwitcher2" class="btn-per btn btn-outline-dark mx-3" onclick="toggleTheme2()">
-                <i id="themeIcon2" style="color:rgb(255, 118, 0) ;" class="bi bi-sun"></i>
-            </button>
+            <!--<button id="themeSwitcher2" class="btn-per btn btn-outline-dark custom-btn mx-1" onclick="toggleTheme2()">
+          <i id="themeIcon2" class="bi bi-sun"></i>
+        </button>-->
         </div>
     </div>
 </div>
@@ -38,14 +38,16 @@
 
     <!-- Menu Lateral -->
    <div class="sidebar mb-0">
-    <div class="text-center mb-3">
-       <a href="meu_perfil_admin.php"></a> <img src="../img/foto.jpg" alt="Perfil" width="100" height="100" class="mb-2 rounded-circle">
-        <h5 style="font-weight: bold; color: rgb(255, 118, 0);">Nome</h5>
-        <span style="color: #dadada; font-size: 11pt;">gabriel.santos@blibiooh.com</span>
+   <div class="text-center mb-3" style="text-decoration: none; cursor:pointer;">
+       <a style="text-decoration: none;" href="meu_perfil_admin.php "> 
+          <img src="../img/perfil.jpg" alt="Perfil" width="100" height="100" class="mb-2 rounded-circle">
+          <h5 style=" font-weight: bold; color: rgb(255, 118, 0);"><?php echo $_SESSION['Nome_Func']?></h5>
+          <span style="color: #dadada; font-size: 11pt;"><?php echo $_SESSION['Email_Func']?></span>
+      </a>
     </div>
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a href="../menu_Admin.html" class="nav-link"><i class="bi bi-house-door-fill"></i> Início</a>
+            <a href="../menu_Admin.php" class="nav-link"><i class="bi bi-house-door-fill"></i> Início</a>
         </li>
         <li class="nav-item">
             <a href="TabelaUsuario.php" class="nav-link"><i class="bi bi-people"></i> Usuários</a>
@@ -66,7 +68,7 @@
                         <a href="TabelaContaAdm.php" class="nav-link"><i class="bi bi-person-badge"></i> Administradores</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link"><i class="bi bi-book-half"></i> Administrar Livro</a>
+                        <a href="TabelaAdministra.php" class="nav-link"><i class="bi bi-book-half"></i> Administrar Livro</a>
                     </li>
                     <li class="nav-item">
                         <a href="TabelaFuncionario.php" class="nav-link"><i class="bi bi-briefcase"></i> Funcionários</a>
@@ -151,8 +153,9 @@ footer {
             $c->setSenha($senha);
             $c->salvar();
 
-            header('Location: ' . $_SERVER['PHP_SELF']);
-            exit;
+            echo '<script>window.location.href = "' . $_SERVER['PHP_SELF'] . '";</script>';
+            //header('Location: ' . $_SERVER['PHP_SELF']);
+            //exit;
         }
     ?>
 
@@ -164,8 +167,9 @@ footer {
             $c->setIdFuncionario($id_funcionario);
             $c->excluir();
 
-            header('Location: ' . $_SERVER['PHP_SELF']);
-            exit;
+            echo '<script>window.location.href = "' . $_SERVER['PHP_SELF'] . '";</script>';
+            //header('Location: ' . $_SERVER['PHP_SELF']);
+            //exit;
         }
     ?>
 

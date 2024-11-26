@@ -1,5 +1,5 @@
 <?php
-include_once '../conectar.php';
+include_once 'conectar.php';
 
 class Usuario{
     private $idUsuario;
@@ -186,7 +186,24 @@ class Usuario{
     {
         try {
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("select * from usuario order by Nome");
+            $sql = $this->conn->prepare("select * from usuario order by Id_Usuario");
+            $sql->execute();
+            return $sql->fetchAll();
+            $this->conn = null;
+        } 
+        catch (PDOException $exc) 
+        {
+            echo "Erro ao executar consulta." . $exc->getMessage();
+        }
+    }
+
+    function listarEmail() 
+    {
+        try {
+            $this->conn = new Conectar();
+            $sql = $this->conn->prepare("select * from usuario where Email like ? and Senha like ?");
+            @$sql->bindParam(1, $this->getEmail(), PDO::PARAM_STR);
+            @$sql->bindParam(2, $this->getSenha(), PDO::PARAM_STR); 
             $sql->execute();
             return $sql->fetchAll();
             $this->conn = null;

@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/login.css">
     <title>Login - BlibioOH</title>
+    <?php session_start();?>
+
 </head>
 <body>
 
@@ -140,8 +142,18 @@
 
                     foreach ($pro_bd as $pro_mostrar) {
                         $existe = true;
-                        echo "<div class='mb-0 mt-0 alert alert-success text-center' style='padding: 10px; font-size: 0.9em;'><b>Bem Vindo! Usuário: " . ($pro_mostrar['Nome']) . "</b></div>";
-                        echo "<a href='menu_User.html'><button type='button' name='btnentrar' class=' mt-0 mb-0 btn btn-primary w-100'>Entrar</button></a>";
+
+                        $_SESSION['Id_Usuario'] = $pro_mostrar[0];
+                        $_SESSION['Nome_User'] = $pro_mostrar[1];
+                        $_SESSION['Endereco_User'] = $pro_mostrar[2];
+                        $_SESSION['Rg_User'] = $pro_mostrar[3];
+                        $_SESSION['Cpf_User'] = $pro_mostrar[4];
+                        $_SESSION['Telefone_User'] = $pro_mostrar[5];
+                        $_SESSION['Email_User'] = $pro_mostrar[6];
+                        $_SESSION['Senha_User'] = $pro_mostrar[7];
+
+                        echo "<div class='mb-0 mt-0 alert alert-success text-center' style='padding: 10px; font-size: 0.9em;'><b>Bem Vindo! Usuário: " . ($_SESSION['Nome_User']) . "</b></div>";
+                        echo "<a href='menu_User.php'><button type='button' name='btnentrar' class=' mt-0 mb-0 btn btn-primary w-100'>Entrar</button></a>";
                     }
                     if (!$existe) {
                         echo "<div class='alert alert-danger text-center'><b>Login inválido! Tente novamente.</b></div>";
