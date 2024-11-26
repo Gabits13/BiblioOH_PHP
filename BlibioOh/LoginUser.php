@@ -131,7 +131,7 @@
                 <?php 
                 extract($_POST, EXTR_OVERWRITE);
                 if (isset($btnenviar)) {
-                    include_once 'usuario.php';
+                    include_once 'php_classes/usuario.php';
                     $u = new Usuario();
                     $u->setEmail($txtemail);  
                     $u->setSenha($txtsenha); 
