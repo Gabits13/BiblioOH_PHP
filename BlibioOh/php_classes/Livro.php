@@ -121,7 +121,7 @@ class Livro
             echo "Erro ao salvar o registro." . $exc->getMessage();
         }
     }
- 
+
     function alterar() 
     {
         try {
@@ -142,7 +142,7 @@ class Livro
     {
         try {
             $this->conn = new Conectar();
-            $sql = $this->conn->prepare("update livro set Titulo=?,Nome_Autor=?,Data_Lancamento=?,Genero=?,Qtde_Paginas=?,Exemplares=?,Editora=?,ISBN=?,Cod_Setor=? where Cod_livro = ?");
+            $sql = $this->conn->prepare("update livro set Titulo=?,Nome_Autor=?,Data_Lancamento=?,Genero=?,Qtde_Pagina=?,Exemplares=?,Editora=?,ISBN=?,Cod_Setor=? where Cod_livro = ?");
             @$sql-> bindParam(1, $this->getTitulo(), PDO::PARAM_STR);
             @$sql-> bindParam(2, $this->getNomeAutor(), PDO::PARAM_STR);
             @$sql-> bindParam(3, $this->getDataLancamento(), PDO::PARAM_STR);
@@ -164,8 +164,6 @@ class Livro
         }
     }
 
-
-    
     function consultar() 
     {
         try {
@@ -208,6 +206,22 @@ class Livro
         try {
             $this->conn = new Conectar();
             $sql = $this->conn->prepare("select * from livro order by Titulo");
+            $sql->execute();
+            return $sql->fetchAll();
+            $this->conn = null;
+        } 
+        catch (PDOException $exc) 
+        {
+            echo "Erro ao executar consulta." . $exc->getMessage();
+        }
+    }
+
+    function listarEmprestimo() 
+    {
+        try {
+            $this->conn = new Conectar();
+            $sql = $this->conn->prepare("select * from livro where Cod_Livro = ?");
+            @$sql-> bindParam(1, $this->getCodLivro(), PDO::PARAM_STR);
             $sql->execute();
             return $sql->fetchAll();
             $this->conn = null;

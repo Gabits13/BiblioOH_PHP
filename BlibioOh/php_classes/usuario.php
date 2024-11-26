@@ -197,6 +197,23 @@ class Usuario{
         }
     }
 
+    function listarEmail() 
+    {
+        try {
+            $this->conn = new Conectar();
+            $sql = $this->conn->prepare("select * from usuario where Email like ? and Senha like ?");
+            @$sql->bindParam(1, $this->getEmail(), PDO::PARAM_STR);
+            @$sql->bindParam(2, $this->getSenha(), PDO::PARAM_STR); 
+            $sql->execute();
+            return $sql->fetchAll();
+            $this->conn = null;
+        } 
+        catch (PDOException $exc) 
+        {
+            echo "Erro ao executar consulta." . $exc->getMessage();
+        }
+    }
+
     function logar() {
         try {
             $this->conn = new Conectar();

@@ -16,6 +16,7 @@ $livros_bd = $livro->listar(); // Lista todos os livros
       <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
       <link rel="stylesheet" href="css/style.css">
+      <?php session_start();?>
 </head>
 <header>
     <div class="px-3 py-2 text-white" style="background-color: #309190;">
@@ -39,7 +40,7 @@ $livros_bd = $livro->listar(); // Lista todos os livros
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link text-white">
+              <a href="#emprestimos" class="nav-link text-white">
                 <img class="bi d-block mx-auto mb-1" width="30" height="30" src="img/emprestimosicon.png" alt="">
                 Meus Empréstimos
               </a>
@@ -53,7 +54,7 @@ $livros_bd = $livro->listar(); // Lista todos os livros
           </ul>
           <div class="dropdown text-end">
             <a href="#" class=" mx-auto  link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="img/foto.jpg" alt="foto de  perfil" width="45" height="45" class="rounded-circle">
+              <img src="img/perfil.jpg" alt="foto de  perfil" width="45" height="45" class="rounded-circle">
             </a>
             <ul class="dropdown-menu text-small">
               <li><a class="dropdown-item" href="meu_perfil.php">Meu Perfil</a></li>
@@ -73,9 +74,9 @@ $livros_bd = $livro->listar(); // Lista todos os livros
           <button type="button" class="btn btn-outline-primary me-auto custom-btn">Fale Conosco</button>
        </a>
          <div class="d-flex align-items-center">
-        <button id="themeSwitcher2" class="btn-per btn btn-outline-dark custom-btn mx-1" onclick="toggleTheme2()">
-          <i id="themeIcon2" class="bi bi-sun"></i>
-        </button>
+        <!--<button id="themeSwitcher" class="btn-per btn btn-outline-dark mx-3" onclick="toggleTheme()">
+                <i id="themeIcon" style="color:rgb(255, 118, 0) ;" class="bi bi-sun"></i>
+            </button>-->
     </div>
       </div>
     </div>
@@ -210,6 +211,88 @@ $livros_bd = $livro->listar(); // Lista todos os livros
         document.getElementById('detalhesLivro').style.display = 'none';
     }
 </script>
+
+
+<style>
+      .custom-btn {
+    border-color: rgb(255, 118, 0); 
+    color: rgb(255, 118, 0);       
+    background-color: transparent; 
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 3px; 
+}
+
+.custom-btn:hover {
+    background-color: rgb(255, 118, 0); 
+    color: white;                      
+    border-color: rgb(255, 118, 0);    
+}
+table {
+    border-collapse: collapse; /* Evita bordas duplas */
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+table th, table td {
+    border: 1px solid #ddd; /* Define a borda de cada célula */
+    padding: 8px; /* Adiciona espaço interno */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+table th {
+    background-color: #f2f2f2; /* Cor de fundo para cabeçalhos */
+    color: black; /* Cor do texto no cabeçalho */
+}
+</style>
+
+<?php
+  include_once 'php_classes/EmprestaLivro.php';
+  include_once 'php_classes/Livro.php';
+  $u = new EmprestaLivro();
+  $u->setIdUsuario($_SESSION['Id_Usuario']);
+  $usuario_bd = $u->listarEmprestimo();
+?>
+
+    <h1 id="emprestimos">Meus Empréstimos</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Titulo do Livro</th>
+                    <th>Data de Emissão</th>
+                    <th>Data de Devolução</th>
+                    <th>Dias Restantes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    foreach($usuario_bd as $usuario_mostrar)
+                    {
+                        $l = new Livro();
+                        $l->setCodLivro($usuario_mostrar[1]);
+                        $livro_bd = $l->listarEmprestimo();
+
+                        $date1=date_create(date("Y-m-d"));
+                        $date2=date_create($usuario_mostrar[3]);
+                        $diff=date_diff($date1,$date2);
+                ?>
+                        <form method="post">
+                            <tr>
+                                <input type="hidden" name="id_usuario" value="<?php echo $usuario_mostrar[0]?>">
+                                <td><?php foreach($livro_bd as $livro_mostrar){echo $livro_mostrar[1];}?></td>
+                                <td><?php echo $usuario_mostrar[2]?></td>
+                                <td><?php echo $usuario_mostrar[3]?></td>
+                                <td><?php echo $diff->format("%R%a dia(s)")?></td>
+                            </tr>
+                              
+                        </form>
+                        <?php
+                    }
+                ?>
+            </tbody>
+        </table>
+    </form>
      <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
