@@ -131,11 +131,11 @@
                 <?php 
                 extract($_POST, EXTR_OVERWRITE);
                 if (isset($btnenviar)) {
-                    include_once 'usuario.php';
+                    include_once 'php_classes/usuario.php';
                     $u = new Usuario();
                     $u->setEmail($txtemail);  
                     $u->setSenha($txtsenha); 
-                    $pro_bd = $u->logar();
+                    $pro_bd = $u->logar();                    
                     $existe = false;
 
                     foreach ($pro_bd as $pro_mostrar) {

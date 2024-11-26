@@ -43,10 +43,10 @@
             <a href="#" class="nav-link"><i class="bi bi-house-door-fill"></i> Início</a>
         </li>
         <li class="nav-item">
-            <a href="php_crud/TabelaUsuario.php" class="nav-link"><i class="bi bi-people"></i> Usuários</a>
+            <a href="#" class="nav-link"><i class="bi bi-people"></i> Usuários</a>
         </li>
         <li class="nav-item">
-            <a href="php_crud/TabelaLivro.php" class="nav-link"><i class="bi bi-book"></i> Livros</a>
+            <a href="Tabela_Livro.php" class="nav-link"><i class="bi bi-book"></i> Livros</a>
         </li>
 
         <!-- Dropdown para Administração Interna -->
@@ -58,29 +58,29 @@
             <div class="collapse" id="adminDropdown">
                 <ul class="nav flex-column ms-3">
                     <li class="nav-item">
-                        <a href="php_crud/TabelaAdministradores.php" class="nav-link"><i class="bi bi-person-badge"></i> Administradores</a>
+                        <a href="#" class="nav-link"><i class="bi bi-person-badge"></i> Administradores</a>
                     </li>
                     <li class="nav-item">
-                        <a href="php_crud/TabelaAdministra.php" class="nav-link"><i class="bi bi-book-half"></i> Administrar Livro</a>
+                        <a href="#" class="nav-link"><i class="bi bi-book-half"></i> Administrar Livro</a>
                     </li>
                     <li class="nav-item">
-                        <a href="php_crud/TabelaFuncionario.php" class="nav-link"><i class="bi bi-briefcase"></i> Funcionários</a>
+                        <a href="#" class="nav-link"><i class="bi bi-briefcase"></i> Funcionários</a>
                     </li>
                     <li class="nav-item">
-                        <a href="php_crud/TabelaSetor.php" class="nav-link"><i class="bi bi-layout-text-sidebar"></i> Setores</a>
+                        <a href="#" class="nav-link"><i class="bi bi-layout-text-sidebar"></i> Setores</a>
                     </li>
                     <li class="nav-item">
-                        <a href="php_crud/TabelaCargo.php" class="nav-link"><i class="bi bi-briefcase"></i> Cargos</a>
+                        <a href="#" class="nav-link"><i class="bi bi-briefcase"></i> Cargos</a>
                     </li>
                     <li class="nav-item">
-                        <a href="php_crud/TabelaPeriodo.php" class="nav-link"><i class="bi bi-calendar3"></i> Período</a>
+                        <a href="#" class="nav-link"><i class="bi bi-calendar3"></i> Período</a>
                     </li>
                 </ul>
             </div>
         </li>
 
         <li class="nav-item">
-            <a href="php_crud/TabelaEmprestimo.php" class="nav-link"><i class="bi bi-calendar-check"></i> Empréstimos</a>
+            <a href="#" class="nav-link"><i class="bi bi-calendar-check"></i> Empréstimos</a>
         </li>
         <li class="nav-item mt-auto">
             <a href="LoginUser.php" class="nav-link"><i class="bi bi-box-arrow-right"></i> Sair</a>
@@ -90,50 +90,20 @@
 
     <!-- Conteúdo Principal -->
     <div class="content mt-4">
-        <div class="container-fluid w-100 p-0"> 
-            <div style="margin-top: -20px;" id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel"> 
-              <div class="carousel-inner mb-3">
-                <div class="carousel-item active" id="carrossel-item" data-bs-interval="5000">
-                  <img src="img/blibioteca.jpg" class="d-block w-100" style="pointer-events: none; object-fit: cover; max-height: 400px;" alt="Foto de um CNC por dentro">
-                   <div class="carousel-caption d-block d-md-block">
-                    <h3>BlibioOH&reg;</h3>
-                    <p id="carousel-caption1" style="font-family: Arial; font-size: 18px; font-weight: bold;">Explore um universo de histórias e descobertas na BiblioOH</p>
-                  </div>
-                </div>
-                <div class="carousel-item" id="carrossel-item" data-bs-interval="7000">
-                  <img src="img/biblioteca2.jpg" class="d-block w-100" style="pointer-events: none; object-fit: cover; max-height: 400px; filter: blur(0.5px);" alt="Foto de um CNC por dentro">
-                   <div class="carousel-caption d-block d-md-block">
-                    <h3 id= "carousel-title2">BlibioOH&reg;</h3>
-                    <p id="carousel-caption2" style="font-family: Arial; font-size: 18px; font-weight: bold;">Sua próxima aventura começa aqui!</p>
-                  </div>
-                </div>
-                <div class="carousel-item" id="carrossel-item" data-bs-interval="7000">
-                  <img src="img/biblioteca3.jpg" class="d-block w-100" style="pointer-events: none; object-fit: cover; max-height: 400px; filter: blur(0.5px);" alt="Foto de um CNC por dentro">
-                   <div class="carousel-caption d-block d-md-block">
-                    <h3 id= "carousel-title3">BlibioOH&reg;</h3>
-                    <p id="carousel-caption3" style="font-family: Arial; font-size: 18px; font-weight: bold;">Conecte-se ao conhecimento e inspire-se em cada página.</p>
-                  </div>
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </div>
         <h1 class="mt-5">Bem-vindo à Área Administrativa</h1>
-        <p class="mb-5">Este é o painel de administração onde você pode gerenciar livros, usuários e configurações do sistema.</p>
+        <p>Este é o painel de administração onde você pode gerenciar livros, usuários e configurações do sistema.</p>
     </div>
-    
+    <div class="content-fluid mt-3 mb-3  fade-in-section">
+        <div class="content mt-4 mb-5">
+           <h2 class="mb-4" id="nossa-producao">Lorem</h2>
+           <p id="texto-producao" style="font-size: 20px; text-align: justify;  hyphens: auto; -webkit-hyphens: auto; word-spacing: -0.05em;">Nós da <i>Blibiooh</i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident alias, impedit, accusamus suscipit quasi similique sapiente maiores deserunt hic, fugiat excepturi beatae! Illum totam consectetur veritatis dolorem quod blanditiis magni.</p>
+       </div>
+       </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <!-- Footer -->
-<footer class="bg-primary text-white py-4 mt-auto">
+<footer class="bg-primary text-white py-4">
     <div class="container-fluid">
         <div class="row">
             <!-- Espaçamento lateral da sidebar -->

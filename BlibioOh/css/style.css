@@ -1,0 +1,15 @@
+.bg-color-navbar{
+    background: linear-gradient(135deg, #309190, #56c4c5);
+}
+.custom-btn {
+    border-color: rgb(255, 118, 0); 
+    color: rgb(255, 118, 0);       
+    background-color: transparent; 
+    transition: all 0.3s ease-in-out; 
+}
+
+.custom-btn:hover {
+    background-color: rgb(255, 118, 0); 
+    color: white;                      
+    border-color: rgb(255, 118, 0);    
+}

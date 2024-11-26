@@ -45,7 +45,7 @@
               
                     extract($_POST, EXTR_OVERWRITE);
                     if (isset($btnenviar)) {
-                        include_once 'admin.php';
+                        include_once 'php_classes/Admin.php';
                         $u = new Admin();
                         $u->setEmail($txtemail); 
                         $u->setSenha($txtsenha);
